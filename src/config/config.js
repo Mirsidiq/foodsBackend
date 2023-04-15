@@ -1,9 +1,6 @@
 const PORT=process.env.PORT || 8080
-import {join} from "path"
 import dotenv from "dotenv"
-
-const dotenvConfig=join(process.cwd(),"src",".env")
-dotenv.config({path:dotenvConfig})
+dotenv.config()
 const sequelizeConfig={
   database:process.env.PG_DATABASE,
   username:process.env.PG_USER,
@@ -13,6 +10,5 @@ const sequelizeConfig={
 }
 export{
   PORT,
-  sequelizeConfig,
-  dotenvConfig
+  sequelizeConfig
 }

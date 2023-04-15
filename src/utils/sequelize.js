@@ -6,7 +6,9 @@ async function startSequelize(models){
   try {
     await sequelize.authenticate()
     console.log('Connection has been established successfully.');
-    await models[0].sync()
+    for(let model of models){
+      await model.sync()
+    }
   } catch (error) {
     throw error
   }
